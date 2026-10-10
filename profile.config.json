@@ -1,0 +1,20 @@
+{
+  "canonical": { "nodes": 683, "agents": 139, "departments": 10 },
+  "graphUrl": "https://omaralatas.com/brain/graph.json",
+  "budgetBytes": 102400,
+  "strings": {
+    "silkLeft": "OMAR_OS",
+    "silkRight": "CORE",
+    "boot": ["> signal detected", "> routing: github.com/Remixer33", "> power on"],
+    "name": "OMAR ALATAS",
+    "nameNarrow": ["OMAR", "ALATAS"],
+    "tagline": "digital plumber. I connect things that do not talk to each other.",
+    "taglineNarrow": ["digital plumber.", "I connect things that do not", "talk to each other."],
+    "status": "[ ok ] all systems",
+    "alt": "OMAR_OS boot screen, CORE. Signal detected. Routing: github.com/Remixer33. Power on. Omar Alatas, digital plumber. I connect things that do not talk to each other. [ ok ] all systems."
+  },
+  "palette": {
+    "dark":  { "panel": "#151a24", "border": "#344058", "name": "#f1ede4", "sage": "#9cbfa4", "muted": "#9c988f", "copper": "#d29a6c", "grid": "#344058", "gridOpacity": 0.4 },
+    "light": { "panel": "#ebe6da", "border": "#c9c2b3", "name": "#1a2030", "sage": "#3f6048", "muted": "#5f5b54", "copper": "#8a603f", "grid": "#c9c2b3", "gridOpacity": 0.6 }
+  }
+}
