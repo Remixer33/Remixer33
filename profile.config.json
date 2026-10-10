@@ -22,7 +22,7 @@
     "the prompt is the bug. the skill is the fix.",
     "static by default. fail closed."
   ],
-  "stackSilk": ["OMAR_OS · STACK", "daily drivers"],
+  "stackSilk": ["OMAR_OS · STACK", "omaralatas.com/stack"],
   "stack": [
     { "group": "LANGUAGES", "tools": [
       { "name": "TypeScript", "tool": "TypeScript", "graph": "TypeScript", "icon": "si:typescript" },

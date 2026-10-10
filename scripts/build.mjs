@@ -246,7 +246,8 @@ function fab(theme, L) {
   const sc = [];
   sc.push(`<rect x="950" y="56" width="220" height="236" rx="6" fill="${p.board}" stroke="${p.line}" stroke-width="1.5"/>`);
   for (const [hx, hy] of [[962, 68], [1158, 68], [962, 280], [1158, 280]]) sc.push(`<circle cx="${hx}" cy="${hy}" r="4.5" fill="none" stroke="${p.line}" stroke-width="1.5"/>`);
-  sc.push(T(974, 72, 10, HC.board, { fill: p.muted, bg: p.board, ls: 1.5 }));
+  // the label sits 4 px above the old baseline, so the socket A LED glow never touches it
+  sc.push(T(974, 68, 10, HC.board, { fill: p.muted, bg: p.board, ls: 1.5 }));
   SOCK.forEach((q, i) => {
     for (const d of traceSet(q)) sc.push(`<path d="${d}" fill="none" stroke="${p.line}" stroke-width="2"/>`);
     sc.push(`<rect x="1110" y="${q[1] - 3}" width="10" height="6" fill="${p.muted}" opacity="0.5"/>`);
@@ -309,7 +310,8 @@ function typing(theme) {
 ${kf.join("\n")}
 ${rules.join("\n")}
 }`;
-  const label = esc(cfg.typing.join(". ") + ".");
+  // one full stop per phrase, and a capital after each full stop, so the label reads as the README alt text
+  const label = esc((cfg.typing.map((ph) => ph.replace(/\.$/, "")).join(". ") + ".").replace(/\. ([a-z])/g, (_, c) => `. ${c.toUpperCase()}`));
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}">
 <title>${label}</title>
 <style>${css}</style>
@@ -361,7 +363,7 @@ function stack(theme, narrow) {
     });
     y = 66 + 6 * 98 + 20;
   } else {
-    // each group label on its own line, then up to five tiles per line
+    // each group label on its own line, then up to five tiles per line, split evenly (6 is 3 + 3, 7 is 4 + 3)
     y = 58;
     STACK.forEach((g, gi) => {
       const labelY = y + 14, lw = g.group.length * (7.2 + 1.5);
@@ -369,8 +371,9 @@ function stack(theme, narrow) {
       const bx0 = r2(32 + lw + 8), by = labelY - 4;
       body.push(`<path d="M${bx0} ${by}H408" stroke="${p.pin}" stroke-width="1"/><path class="bus" pathLength="1" style="animation-delay:${r3(gi * 0.15)}s" d="M${bx0} ${by}H408" stroke="${p.copper}" stroke-width="1.4" fill="none"/><circle cx="408" cy="${by}" r="2.5" fill="${p.copper}"/>`);
       y += 34;
-      for (let i = 0; i < g.tools.length; i += 5) {
-        g.tools.slice(i, i + 5).forEach((t, j) => { body.push(tile(p, 32 + j * 80, y, t, n)); n++; });
+      const per = Math.ceil(g.tools.length / Math.ceil(g.tools.length / 5));
+      for (let i = 0; i < g.tools.length; i += per) {
+        g.tools.slice(i, i + per).forEach((t, j) => { body.push(tile(p, 32 + j * 80, y, t, n)); n++; });
         y += 94;
       }
       y += 4;
