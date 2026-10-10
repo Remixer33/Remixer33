@@ -1,5 +1,5 @@
 {
-  "canonical": { "nodes": 683, "agents": 139, "departments": 10 },
+  "canonical": { "nodes": 719, "agents": 166, "departments": 10 },
   "graphUrl": "https://omaralatas.com/brain/graph.json",
   "budgetBytes": 102400,
   "header": {
