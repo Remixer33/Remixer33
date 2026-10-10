@@ -2,19 +2,102 @@
   "canonical": { "nodes": 683, "agents": 139, "departments": 10 },
   "graphUrl": "https://omaralatas.com/brain/graph.json",
   "budgetBytes": 102400,
-  "strings": {
-    "silkLeft": "OMAR_OS",
-    "silkRight": "CORE",
-    "boot": ["> signal detected", "> routing: github.com/Remixer33", "> power on"],
+  "header": {
+    "silkLeft": "OMAR_OS · FAB LINE",
+    "silkRight": "github.com/Remixer33",
     "name": "OMAR ALATAS",
-    "nameNarrow": ["OMAR", "ALATAS"],
-    "tagline": "digital plumber. I connect things that do not talk to each other.",
-    "taglineNarrow": ["digital plumber.", "I connect things that do not", "talk to each other."],
-    "status": "[ ok ] all systems",
-    "alt": "OMAR_OS boot screen, CORE. Signal detected. Routing: github.com/Remixer33. Power on. Omar Alatas, digital plumber. I connect things that do not talk to each other. [ ok ] all systems."
+    "board": "OA · MAINBOARD",
+    "dice": "DICE",
+    "feed": "FEED",
+    "slots": ["A", "B", "C"],
+    "counters": [["AGENTS", "agents"], ["NODES", "nodes"], ["SLOT", null]],
+    "steps": ["feed", "pick", "move", "place"],
+    "seated": "[ ok ] seated",
+    "live": "[ ok ] board live",
+    "title": "Omar Alatas. A fab line on a loop: a die leaves the dicing station, a robot arm places it on a board, and the copper traces light up to the name. Readout: {agents} agents, {nodes} nodes, board live."
   },
+  "typing": [
+    "digital plumber",
+    "I connect things that do not talk to each other",
+    "the prompt is the bug. the skill is the fix.",
+    "static by default. fail closed."
+  ],
+  "stackSilk": ["OMAR_OS · STACK", "daily drivers"],
+  "stack": [
+    { "group": "LANGUAGES", "tools": [
+      { "name": "TypeScript", "tool": "TypeScript", "graph": "TypeScript", "icon": "si:typescript" },
+      { "name": "JavaScript", "tool": "JavaScript", "graph": "JavaScript", "icon": "si:javascript" },
+      { "name": "Python", "tool": "Python", "graph": "Python", "icon": "si:python" },
+      { "name": "Bash", "tool": "Bash", "graph": "Bash", "icon": "si:gnubash" },
+      { "name": "PowerShell", "tool": "PowerShell", "graph": "PowerShell", "icon": "dv:powershell-plain" },
+      { "name": "Rust", "tool": "Rust", "graph": "Rust", "icon": "si:rust" }
+    ] },
+    { "group": "FRONTEND", "tools": [
+      { "name": "Next.js", "tool": "Next.js", "graph": "Next.js", "icon": "si:nextdotjs" },
+      { "name": "React", "tool": "React", "graph": "React", "icon": "si:react" },
+      { "name": "Vite", "tool": "Vite", "graph": "Vite", "icon": "si:vite" },
+      { "name": "Tailwind", "tool": "Tailwind CSS", "graph": "Tailwind CSS", "icon": "si:tailwindcss" },
+      { "name": "three.js", "tool": "three.js", "graph": "three.js", "icon": "si:threedotjs" },
+      { "name": "GSAP", "tool": "GSAP", "graph": "GSAP", "icon": "si:gsap" },
+      { "name": "Tauri", "tool": "Tauri", "graph": "Tauri", "icon": "mark:TA" }
+    ] },
+    { "group": "EDGE & BACKEND", "tools": [
+      { "name": "Cloudflare", "tool": "Cloudflare", "graph": "Cloudflare", "icon": "si:cloudflare" },
+      { "name": "Workers", "tool": "Cloudflare Workers", "graph": "Cloudflare", "icon": "si:cloudflareworkers" },
+      { "name": "Node.js", "tool": "Node.js", "graph": "Node.js", "icon": "si:nodedotjs" },
+      { "name": "Docker", "tool": "Docker", "graph": "Docker", "icon": "si:docker" },
+      { "name": "Vercel", "tool": "Vercel", "graph": "Vercel", "icon": "si:vercel" },
+      { "name": "Google Cloud", "tool": "Google Cloud", "graph": "Google Cloud", "icon": "si:googlecloud" }
+    ] },
+    { "group": "DATA", "tools": [
+      { "name": "Postgres", "tool": "PostgreSQL", "graph": "PostgreSQL", "icon": "si:postgresql" },
+      { "name": "Supabase", "tool": "Supabase", "graph": "Supabase", "icon": "si:supabase" },
+      { "name": "MySQL", "tool": "MySQL", "graph": "Production MySQL", "icon": "si:mysql" },
+      { "name": "MongoDB", "tool": "MongoDB", "graph": "Production MongoDB", "icon": "si:mongodb" },
+      { "name": "SQLite", "tool": "SQLite", "graph": "SQLite", "icon": "si:sqlite" },
+      { "name": "PostHog", "tool": "PostHog", "graph": "PostHog", "icon": "si:posthog" },
+      { "name": "Sheets", "tool": "Google Sheets", "graph": "Google Sheets", "icon": "si:googlesheets" }
+    ] },
+    { "group": "AI & AGENTS", "tools": [
+      { "name": "Claude Code", "tool": "Claude Code", "graph": "Claude Code", "icon": "si:claude" },
+      { "name": "Anthropic", "tool": "Anthropic SDK", "graph": "Anthropic SDK", "icon": "si:anthropic" },
+      { "name": "MCP", "tool": "Model Context Protocol", "graph": "Model Context Protocol", "icon": "si:modelcontextprotocol" },
+      { "name": "claude-mem", "tool": "claude-mem", "graph": "claude-mem", "icon": "mark:CM" },
+      { "name": "Superpowers", "tool": "Superpowers", "graph": "Superpowers", "icon": "mark:SP" }
+    ] },
+    { "group": "TOOLING", "tools": [
+      { "name": "Git", "tool": "Git", "graph": "Git", "icon": "si:git" },
+      { "name": "GitHub", "tool": "GitHub", "graph": "GitHub", "icon": "si:github" },
+      { "name": "Actions", "tool": "GitHub Actions", "graph": "GitHub Actions", "icon": "si:githubactions" },
+      { "name": "Playwright", "tool": "Playwright", "graph": "Playwright", "icon": "dv:playwright-plain" },
+      { "name": "Lighthouse", "tool": "Lighthouse", "graph": "Lighthouse", "icon": "si:lighthouse" },
+      { "name": "npm", "tool": "npm", "graph": "npm", "icon": "si:npm" },
+      { "name": "Bun", "tool": "Bun", "graph": "Bun", "icon": "si:bun" }
+    ] }
+  ],
+  "badges": [
+    { "file": "site", "label": "web", "value": "omaralatas.com" },
+    { "file": "brain", "label": "brain", "value": "{nodes} nodes" },
+    { "file": "stack", "label": "stack", "value": "full list" },
+    { "file": "linkedin", "label": "linkedin", "value": "omaralatas" }
+  ],
   "palette": {
-    "dark":  { "panel": "#151a24", "border": "#344058", "name": "#f1ede4", "sage": "#9cbfa4", "muted": "#9c988f", "copper": "#d29a6c", "grid": "#344058", "gridOpacity": 0.4 },
-    "light": { "panel": "#ebe6da", "border": "#c9c2b3", "name": "#1a2030", "sage": "#3f6048", "muted": "#5f5b54", "copper": "#8a603f", "grid": "#c9c2b3", "gridOpacity": 0.6 }
+    "dark": {
+      "panel": "#151a24", "frame": "#344058", "line": "#344058", "grid": "#344058", "gridOpacity": 0.35,
+      "fg": "#f1ede4", "muted": "#9c988f", "copper": "#d29a6c",
+      "board": "#1a2030", "station": "#1a2030", "die": "#262f42", "wafer": "#1f2738", "belt": "#1a2030",
+      "arm": "#232c3f", "armStroke": "#9c988f",
+      "tile": "#1a2030", "tileStroke": "#344058", "pin": "#344058",
+      "page": "#0d1117"
+    },
+    "light": {
+      "panel": "#ebe6da", "frame": "#c9c2b3", "line": "#b9b2a2", "grid": "#c9c2b3", "gridOpacity": 0.6,
+      "fg": "#1a2030", "muted": "#5f5b54", "copper": "#845b3b",
+      "board": "#e3ddd0", "station": "#e3ddd0", "die": "#f6f3ec", "wafer": "#d8d1c2", "belt": "#e3ddd0",
+      "arm": "#ddd6c7", "armStroke": "#5f5b54",
+      "tile": "#f6f3ec", "tileStroke": "#b9b2a2", "pin": "#b9b2a2",
+      "page": "#ffffff"
+    },
+    "badge": { "labelFill": "#1a2030", "labelText": "#f1ede4", "valueFill": "#d29a6c", "valueText": "#1a2030", "hairline": "#344058" }
   }
 }
