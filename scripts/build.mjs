@@ -449,7 +449,7 @@ for (const [name, body] of Object.entries(files)) {
   const bytes = Buffer.byteLength(body);
   const hrefs = [...body.matchAll(/\bhref="([^"]*)"/g)].filter((m) => !m[1].startsWith("#")).length;
   const urls = [...body.matchAll(/url\(([^)]*)\)/g)].filter((m) => !/^(#|data:)/.test(m[1])).length;
-  const bad = [/<script/i.test(body) && "script", /<foreignObject/i.test(body) && "foreignObject", hrefs && "href", urls && "url(", /@import/.test(body) && "@import", /[–—]/.test(body) && "dash", /!/.test(body) && "exclamation mark"].filter(Boolean);
+  const bad = [/<script/i.test(body) && "script", /<foreignObject/i.test(body) && "foreignObject", hrefs && "href", urls && "url(", /@import/.test(body) && "@import", /[\u2013\u2014]/.test(body) && "dash", /!/.test(body) && "exclamation mark"].filter(Boolean);
   if (bytes > cfg.budgetBytes) fail(`${name}: ${bytes} bytes, over the budget of ${cfg.budgetBytes}`);
   else if (bad.length) fail(`${name}: holds ${bad.join(", ")}`);
   else pass(`${name}: ${bytes} bytes, clean`);
@@ -459,7 +459,7 @@ for (const [name, body] of Object.entries(files)) {
 const readme = readFileSync(join(ROOT, "README.md"), "utf8");
 const attrs = (readme.match(/\b(style|class|id)=/g) || []).length;
 attrs ? fail(`README.md has ${attrs} style, class or id attribute(s)`) : pass("README.md has no style, class or id attribute");
-const rbad = (readme.match(/[–—!]/g) || []).length;
+const rbad = (readme.match(/[\u2013\u2014!]/g) || []).length;
 rbad ? fail(`README.md has ${rbad} dash or exclamation mark character(s)`) : pass("README.md has no em dash, en dash or exclamation mark");
 const alts = [...readme.matchAll(/\balt="([^"]*)"/g)].map((m) => m[1]).join(" | ");
 const needed = [
