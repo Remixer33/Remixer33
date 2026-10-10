@@ -27,8 +27,8 @@ const report = (name, n) => {
   if (n !== 0) fails++;
 };
 
-report("em dash U+2014", (raw.match(/—/g) || []).length);
-report("en dash U+2013", (raw.match(/–/g) || []).length);
+report("em dash U+2014", (raw.match(/\u2014/g) || []).length);
+report("en dash U+2013", (raw.match(/\u2013/g) || []).length);
 report("exclamation mark outside comments", (noComments.match(/!/g) || []).length);
 
 const contractions = (noComments.match(/\b\w+'(s|t|re|ve|ll|d|m)\b/gi) || [])
@@ -63,7 +63,7 @@ if (process.argv.includes("--drift")) {
     const live = { nodes: g.counts?.total, agents: g.counts?.workforce, departments: g.sectors?.length };
     for (const key of ["nodes", "agents", "departments"]) {
       const same = live[key] === cfg.canonical[key];
-      console.log(`${same ? "PASS" : "FAIL"} drift ${key}: live ${live[key]}, README ${cfg.canonical[key]}`);
+      console.log(`${same ? "PASS" : "FAIL"} drift ${key}: live ${live[key]}, profile.config.json ${cfg.canonical[key]}`);
       if (!same) fails++;
     }
   } catch (err) {

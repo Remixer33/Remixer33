@@ -91,14 +91,14 @@ The engine is the private repo my agent fleet runs on.
 - <samp>guards</samp> · Secret scanners, a pre-push gate and encrypted backups. A check that runs after a leak is a report, not a gate.
 - <samp>sync</samp> · My machines are equal and GitHub is truth. Work that exists on one disk is work that does not exist yet.
 
-<samp>shell · node · python · powershell</samp>
+<samp>shell · node · python · powershell</samp>
 
 ## <samp>[ ok ] deck</samp>
 
-[omaralatas.com](https://omaralatas.com) is built as a command deck: one HUD, one particle world and a palette on <kbd>Cmd</kbd> + <kbd>K</kbd>.
+[omaralatas.com](https://omaralatas.com) is built as a command deck: one HUD, one particle world and a palette on <kbd>Cmd</kbd>+<kbd>K</kbd>.
 
 - A Next.js static export with React, TypeScript, Tailwind CSS and three.js. No server, no API routes, no middleware.
-- The live parts run on one small Cloudflare Worker: a feed on a cron, a visitor counter and a PostHog relay, kept in one SQLite Durable Object.
+- The live parts run on one small Cloudflare Worker: a PostHog relay, plus a feed on a cron and a visitor counter kept in one SQLite Durable Object.
 - The sound has no audio files. Oscillators make it when it plays.
 - The build fails if a text colour misses the contrast floor or the copy breaks its own rules.
 - The brain is compiled, not drawn. Reviewed sources and a denylist go in, JSON comes out, with no network. If a locked name would ship, the run aborts and writes nothing. A clean scan over nothing scanned is a failure, not a pass.
@@ -114,14 +114,14 @@ Small tools I built for myself. Both are private for now.
 
 ## <samp>[ ok ] stack</samp>
 
-What I use every week, not what I have read about. The full list, with one line on each tool, is at [omaralatas.com/stack](https://omaralatas.com/stack).
+What I build with, not what I have read about. The full list, with one line on each tool, is at [omaralatas.com/stack](https://omaralatas.com/stack).
 
-- <samp>lang</samp> · TypeScript · JavaScript · Python · Bash · PowerShell · SQL · Rust
-- <samp>front</samp> · Next.js · React · Vite · Tailwind CSS · three.js · GSAP · Lenis · Zustand · Tauri
-- <samp>edge</samp> · Cloudflare Workers · Durable Objects · Wrangler
-- <samp>data</samp> · PostgreSQL · Supabase · MySQL · MongoDB · SQLite · PostHog
-- <samp>agents</samp> · Claude Code · Model Context Protocol · claude-mem
-- <samp>ship</samp> · Git · GitHub CLI · GitHub Actions · Docker · Playwright · Lighthouse
+- <samp>lang</samp> · TypeScript · JavaScript · Python · Bash · PowerShell · SQL · Rust
+- <samp>front</samp> · Next.js · React · Vite · Tailwind CSS · three.js · GSAP · Lenis · Zustand · Tauri
+- <samp>edge</samp> · Cloudflare Workers · Durable Objects · Wrangler
+- <samp>data</samp> · PostgreSQL · Supabase · MySQL · MongoDB · SQLite · PostHog
+- <samp>agents</samp> · Claude Code · Model Context Protocol · claude-mem
+- <samp>ship</samp> · Git · GitHub CLI · GitHub Actions · Docker · Playwright · Lighthouse
 
 ```text
 > rules loaded

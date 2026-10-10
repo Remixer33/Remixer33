@@ -19,6 +19,7 @@ text{font-family:"JBM", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberati
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes type{from{transform:scaleX(1)}to{transform:scaleX(0)}}
 @keyframes blink{0%{opacity:1}50%{opacity:0}100%{opacity:1}}
+@keyframes hold{from{opacity:0}to{opacity:0}}
 @keyframes land{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @keyframes flash{0%{opacity:.85}100%{opacity:0}}
 @keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
@@ -29,7 +30,7 @@ text{font-family:"JBM", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberati
 .a-b1{animation:type .35s steps(17, end) .2s both}
 .a-b2{animation:type .55s steps(31, end) .6s both}
 .a-b3{animation:type .2s steps(10, end) 1.2s both}
-.a-caret{animation:blink .5s steps(1, end) .2s 6 both}
+.a-caret{animation:blink .5s steps(1, end) 1.4s 4 both, hold 1.4s linear 0s 1 none}
 .a-name{animation:land .4s cubic-bezier(.2,.7,.2,1) 1.5s both}
 .a-ghost{animation:flash .12s linear 1.5s 1 none}
 .a-trace{animation:draw 1.2s ease-in-out 1.9s both}
@@ -61,6 +62,6 @@ text{font-family:"JBM", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberati
 <circle class="ring pop a-pad" cx="1104" cy="252" r="12"/>
 <g class="a-tail">
 <text class="tag" x="56" y="344" font-size="24">digital plumber. I connect things that do not talk to each other.</text>
-<text class="status" x="1144" y="372" font-size="15" text-anchor="end">[ ok ] all systems</text>
+<text class="status" x="1144" y="380" font-size="15" text-anchor="end">[ ok ] all systems</text>
 </g>
 </svg>

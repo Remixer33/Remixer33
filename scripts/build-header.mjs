@@ -29,7 +29,7 @@ const allStrings = [];
   else if (Array.isArray(v)) v.forEach(walk);
   else if (v && typeof v === "object") Object.values(v).forEach(walk);
 })(cfg);
-const badChars = allStrings.filter((s) => /[–—!]/.test(s));
+const badChars = allStrings.filter((s) => /[\u2013\u2014!]/.test(s));
 badChars.length ? fail(`config strings with a dash or exclamation mark: ${badChars.length}`) : pass("no em dash, en dash or exclamation mark in the config");
 
 // ---------- check 2: contrast (WCAG 2.x relative luminance)
@@ -85,6 +85,7 @@ function style(p) {
     `@keyframes fade{from{opacity:0}to{opacity:1}}`,
     `@keyframes type{from{transform:scaleX(1)}to{transform:scaleX(0)}}`,
     `@keyframes blink{0%{opacity:1}50%{opacity:0}100%{opacity:1}}`,
+    `@keyframes hold{from{opacity:0}to{opacity:0}}`,
     `@keyframes land{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}`,
     `@keyframes flash{0%{opacity:.85}100%{opacity:0}}`,
     `@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}`,
@@ -95,7 +96,8 @@ function style(p) {
     `.a-b1{animation:type .35s steps(${S.boot[0].length}, end) .2s both}`,
     `.a-b2{animation:type .55s steps(${S.boot[1].length}, end) .6s both}`,
     `.a-b3{animation:type .2s steps(${S.boot[2].length}, end) 1.2s both}`,
-    `.a-caret{animation:blink .5s steps(1, end) .2s 6 both}`,
+    // The caret waits, hidden, until the last boot line is typed (1.4 s), so it never runs ahead of the typing.
+    `.a-caret{animation:blink .5s steps(1, end) 1.4s 4 both, hold 1.4s linear 0s 1 none}`,
     `.a-name{animation:land .4s cubic-bezier(.2,.7,.2,1) 1.5s both}`,
     `.a-ghost{animation:flash .12s linear 1.5s 1 none}`,
     `.a-trace{animation:draw 1.2s ease-in-out 1.9s both}`,
@@ -158,7 +160,7 @@ const WIDE = {
   nameSize: 96, names: [{ text: S.name, x: 56, y: 262, len: 634 }],
   trace: "M56 292 H980 L1020 252 H1097", pad: [1104, 252],
   tagX: 56, tag: [{ text: S.tagline, y: 344 }],
-  statusX: 1144, statusY: 372, statusSize: 15,
+  statusX: 1144, statusY: 380, statusSize: 15,
 };
 const NARROW = {
   w: 640, h: 560, grid: [430, 190, 186, 150],
