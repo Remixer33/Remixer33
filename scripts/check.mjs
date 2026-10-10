@@ -1,7 +1,8 @@
 // Public copy checks for README.md. Node standard library only.
 //
 //   node scripts/check.mjs           check the README copy
-//   node scripts/check.mjs --drift   also compare the live map counts with profile.config.json
+//   node scripts/check.mjs --drift   also compare the live map with profile.config.json: the counts,
+//                                    and every stack tool's node label
 //
 // Prints counts only. Exits 1 on any failure.
 
@@ -55,6 +56,19 @@ const codeLines = [...noComments.matchAll(/```[a-z]*\n([\s\S]*?)```/g)]
   .filter((l) => [...l].length > 37);
 report("code block lines over 37 characters", codeLines.length);
 
+// Prose words: tags are removed with their alt text, link targets and URLs are dropped, and the dot
+// separators are dropped. The typing phrases count too, because a reader sees them. Limit: 120.
+const prose = noComments
+  .replace(/<[^>]*>/g, " ")
+  .replace(/\]\([^)]*\)/g, "] ")
+  .replace(/https?:\/\/\S+/g, " ")
+  .split(/\s+/)
+  .filter((w) => /[A-Za-z0-9]/.test(w));
+const typingWords = cfg.typing.join(" ").split(/\s+/).filter(Boolean);
+const totalWords = prose.length + typingWords.length;
+console.log(`${totalWords <= 120 ? "PASS" : "FAIL"} prose words: README ${prose.length} + typing line ${typingWords.length} = ${totalWords} (limit 120)`);
+if (totalWords > 120) fails++;
+
 if (process.argv.includes("--drift")) {
   try {
     const res = await fetch(cfg.graphUrl, { headers: { accept: "application/json" } });
@@ -66,6 +80,11 @@ if (process.argv.includes("--drift")) {
       console.log(`${same ? "PASS" : "FAIL"} drift ${key}: live ${live[key]}, profile.config.json ${cfg.canonical[key]}`);
       if (!same) fails++;
     }
+    const stackLabels = new Set((g.nodes || []).filter((n) => n.scene === "stack").map((n) => n.label));
+    const tools = cfg.stack.flatMap((grp) => grp.tools);
+    const gone = tools.filter((t) => !stackLabels.has(t.graph));
+    console.log(`${gone.length ? "FAIL" : "PASS"} drift stack: ${tools.length - gone.length} of ${tools.length} tools have a node in the live stack scene${gone.length ? ` (missing: ${gone.map((t) => t.graph).join(", ")})` : ""}`);
+    if (gone.length) fails++;
   } catch (err) {
     console.log(`FAIL drift: could not read the live map (${err.message})`);
     fails++;
