@@ -3,7 +3,7 @@
     <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/fab-narrow-dark.svg">
     <source media="(max-width: 600px)" srcset="assets/fab-narrow-light.svg">
     <source media="(prefers-color-scheme: dark)" srcset="assets/fab-dark.svg">
-    <img src="assets/fab-light.svg" width="100%" alt="Omar Alatas. A fab line on a loop: a die leaves the dicing station, a robot arm places it on a board, and the copper traces light up to the name. Readout: 166 agents, 719 nodes, board live.">
+    <img src="assets/fab-light.svg" width="100%" alt="Omar Alatas. A fab line on a loop: a die leaves the dicing station, a robot arm places it on a board, and the copper traces light up to the name. Readout: 166 agents, 645 nodes, board live.">
   </picture>
 </a>
 
@@ -29,7 +29,7 @@ I direct 166 agents in ten departments and review what ships. The whole floor is
 
 <p align="center">
   <a href="https://omaralatas.com"><img src="assets/badges/site.svg" height="28" alt="web: omaralatas.com"></a>
-  <a href="https://omaralatas.com/brain"><img src="assets/badges/brain.svg" height="28" alt="brain: 719 nodes"></a>
+  <a href="https://omaralatas.com/brain"><img src="assets/badges/brain.svg" height="28" alt="brain: 645 nodes"></a>
   <a href="https://omaralatas.com/stack"><img src="assets/badges/stack.svg" height="28" alt="stack: full list"></a>
   <a href="https://www.linkedin.com/in/omaralatas"><img src="assets/badges/linkedin.svg" height="28" alt="linkedin: omaralatas"></a>
 </p>
