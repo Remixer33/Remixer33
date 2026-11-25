@@ -1,4 +1,4 @@
-<a href="https://omaralatas.com">
+<a href="https://omaralatas.com?utm_source=github&utm_medium=profile">
   <picture>
     <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/fab-narrow-dark.svg">
     <source media="(max-width: 600px)" srcset="assets/fab-narrow-light.svg">
@@ -25,11 +25,11 @@ I run operations and technology at Eterna Indonesia. I lead the product on Merde
   <img src="assets/stack-light.svg" width="100%" alt="Stack. Languages: TypeScript, JavaScript, Python, Bash, PowerShell, Rust. Frontend: Next.js, React, Vite, Tailwind CSS, three.js, GSAP, Tauri. Edge and backend: Cloudflare, Cloudflare Workers, Node.js, Docker, Vercel, Google Cloud. Data: PostgreSQL, Supabase, MySQL, MongoDB, SQLite, PostHog, Google Sheets. AI and agents: Claude Code, Anthropic SDK, Model Context Protocol, claude-mem, Superpowers. Tooling: Git, GitHub, GitHub Actions, Playwright, Lighthouse, npm, Bun.">
 </picture>
 
-I direct 166 agents in ten departments and review what ships. The whole floor is mapped at [omaralatas.com/brain](https://omaralatas.com/brain).
+I direct 166 agents in ten departments and review what ships. The whole floor is mapped at [omaralatas.com/brain](https://omaralatas.com/brain?utm_source=github&utm_medium=profile).
 
 <p align="center">
-  <a href="https://omaralatas.com"><img src="assets/badges/site.svg" height="28" alt="web: omaralatas.com"></a>
-  <a href="https://omaralatas.com/brain"><img src="assets/badges/brain.svg" height="28" alt="brain: 627 nodes"></a>
-  <a href="https://omaralatas.com/stack"><img src="assets/badges/stack.svg" height="28" alt="stack: full list"></a>
+  <a href="https://omaralatas.com?utm_source=github&utm_medium=profile"><img src="assets/badges/site.svg" height="28" alt="web: omaralatas.com"></a>
+  <a href="https://omaralatas.com/brain?utm_source=github&utm_medium=profile"><img src="assets/badges/brain.svg" height="28" alt="brain: 627 nodes"></a>
+  <a href="https://omaralatas.com/stack?utm_source=github&utm_medium=profile"><img src="assets/badges/stack.svg" height="28" alt="stack: full list"></a>
   <a href="https://www.linkedin.com/in/omaralatas"><img src="assets/badges/linkedin.svg" height="28" alt="linkedin: omaralatas"></a>
 </p>
